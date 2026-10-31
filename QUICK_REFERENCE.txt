@@ -1,0 +1,175 @@
+# 🗺️ Quick Navigation Guide
+
+## File Tree (New Clean Structure)
+
+```
+@latest/
+│
+├── 📄 package.json              Dependencies
+├── 📄 README.md                 📖 App flow & architecture
+├── 📄 STRUCTURE.md              📖 Detailed structure guide
+├── 📄 CLEANUP.md                📖 Cleanup instructions
+├── 📄 REORGANIZATION.md         📖 Before/after summary
+├── 📄 vite.config.js            Build config
+├── 📄 eslint.config.js          Lint config
+│
+├── 📁 public/
+│   └── d-din/
+│       └── D-DIN.otf            Custom font
+│
+└── 📁 src/
+    │
+    ├── 📁 components/           🧩 All React Components
+    │   ├── 📄 App.jsx           Root with router
+    │   ├── 📁 layout/
+    │   │   ├── 📄 Layout.jsx    Page wrapper
+    │   │   └── 📄 NavBar.jsx    Navigation header
+    │   └── 📁 pages/
+    │       ├── 📄 Home.jsx      Landing page
+    │       ├── 📄 StarShip.jsx  Carousel page
+    │       └── 📄 StarSheild.jsx Info page
+    │
+    ├── 📁 config/              ⚙️ Configuration
+    │   └── 📄 constants.js      All constants
+    │
+    ├── 📁 hooks/               🪝 Custom Hooks
+    │   └── 📄 useCountdown.js  Countdown timer
+    │
+    ├── 📁 styles/              🎨 Styling
+    │   └── 📄 index.css         Global CSS
+    │
+    └── 📄 main.jsx             Entry point
+```
+
+---
+
+## 🧭 Where to Find Things
+
+### Components
+- **Root App:** `src/components/App.jsx`
+- **Page Wrapper:** `src/components/layout/Layout.jsx`
+- **Navigation:** `src/components/layout/NavBar.jsx`
+- **Landing Page:** `src/components/pages/Home.jsx`
+- **Starship Page:** `src/components/pages/StarShip.jsx`
+- **StarShield Page:** `src/components/pages/StarSheild.jsx`
+
+### Configuration
+- **Constants & Data:** `src/config/constants.js`
+  - Button styles
+  - Navigation menus
+  - Carousel slides
+
+### Custom Logic
+- **Countdown Hook:** `src/hooks/useCountdown.js`
+
+### Styling
+- **Global Styles:** `src/styles/index.css`
+  - Tailwind CSS
+  - Custom fonts
+
+---
+
+## 📖 Documentation Files
+
+| File | Purpose | Read When |
+|------|---------|-----------|
+| **README.md** | Architecture & flow | Understanding the app |
+| **STRUCTURE.md** | Detailed folder guide | Learning folder organization |
+| **CLEANUP.md** | Cleanup instructions | Ready to delete old files |
+| **REORGANIZATION.md** | Before/after summary | Seeing what changed |
+| **Quick Navigation.txt** | This file | Finding files quickly |
+
+---
+
+## 🚀 Common Tasks
+
+### To Add a New Page
+1. Create file in `src/components/pages/NewPage.jsx`
+2. Add route to `src/components/App.jsx`
+3. Import in App.jsx: `import NewPage from './pages/NewPage'`
+
+### To Add a New Hook
+1. Create file in `src/hooks/useNewHook.js`
+2. Export function: `export const useNewHook = () => {...}`
+3. Import where needed: `import { useNewHook } from '../hooks/useNewHook'`
+
+### To Add a New Constant
+1. Open `src/config/constants.js`
+2. Add new constant
+3. Export it: `export const NEW_CONST = {...}`
+4. Import where needed: `import { NEW_CONST } from '../config/constants'`
+
+### To Add a New Style
+1. Add to `src/styles/index.css`
+2. Use in components
+
+---
+
+## 🎯 Import Cheat Sheet
+
+```javascript
+// From src/main.jsx (at root)
+import App from './components/App'
+import './styles/index.css'
+
+// From src/components/App.jsx
+import Layout from './layout/Layout'
+import Home from './pages/Home'
+
+// From src/components/pages/Home.jsx
+import { BUTTON_STYLES } from '../../config/constants'
+
+// From src/components/layout/NavBar.jsx
+import { useCountdown } from '../../hooks/useCountdown'
+import { NAV_MENU_ITEMS } from '../../config/constants'
+```
+
+---
+
+## ✅ Folder Purposes
+
+```
+📁 components/     → React UI Components
+   📁 layout/      → Components that wrap pages
+   📁 pages/       → Full page components (one per route)
+
+📁 config/         → Application configuration & constants
+
+📁 hooks/          → Custom React hooks
+
+📁 styles/         → Global CSS and Tailwind imports
+
+📁 public/         → Static files (fonts, images)
+```
+
+---
+
+## 🗑️ Old Files to Delete
+
+Once verified everything works, delete these from `src/`:
+- App.jsx
+- Layout.jsx
+- NavBar.jsx
+- Home.jsx
+- StarShip.jsx
+- StarSheild.jsx
+- constants.js
+- index.css
+
+See CLEANUP.md for detailed instructions.
+
+---
+
+## 🎓 Pro Tips
+
+✅ **Tip 1:** Always organize by feature/function  
+✅ **Tip 2:** Keep related files together  
+✅ **Tip 3:** Use relative imports  
+✅ **Tip 4:** Follow naming conventions  
+✅ **Tip 5:** Comment your imports  
+
+---
+
+**Quick Reference Card**  
+Print or bookmark this for easy navigation!  
+Date: 2026-06-24
