@@ -1,10 +1,10 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createHashRouter, RouterProvider } from "react-router-dom"
 import Layout from './layout/Layout'
 import Home from './pages/Home'
 import StarSheild from './pages/StarSheild'
 import StarShip from './pages/StarShip'
 
-const routes = createBrowserRouter([
+const routes = createHashRouter([
   {
     path : "/" ,
     element : <Layout /> , 
