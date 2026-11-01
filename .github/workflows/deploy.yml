@@ -1,5 +1,5 @@
 
-name: Deploy SpaceX Clone
+name: Deploy Space-X to GitHub Pages
 
 on:
   push:
@@ -10,6 +10,10 @@ permissions:
   contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -32,9 +36,6 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
